@@ -1,0 +1,37 @@
+{
+  "method": "PATCH",
+  "header": [
+    {
+      "key": "Authorization",
+      "value": "Bearer {{token}}",
+      "type": "default"
+    },
+    {
+      "key": "Content-Type",
+      "value": "application/json",
+      "type": "default"
+    }
+  ],
+  "body": {
+    "mode": "raw",
+    "options": {
+      "raw": {
+        "language": "json"
+      }
+    },
+    "raw_json_formatted": {
+      "traffic_percentage": 46
+    }
+  },
+  "url": {
+    "raw": "{{host}}/experiments/{{experiment_id}}/ramp",
+    "host": [
+      "{{host}}"
+    ],
+    "path": [
+      "experiments",
+      "{{experiment_id}}",
+      "ramp"
+    ]
+  }
+}

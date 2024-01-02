@@ -1,0 +1,47 @@
+{
+  "method": "PUT",
+  "header": [
+    {
+      "key": "Authorization",
+      "value": "Bearer {{token}}",
+      "type": "text"
+    },
+    {
+      "key": "Content-Type",
+      "value": "application/json",
+      "type": "text"
+    }
+  ],
+  "body": {
+    "mode": "raw",
+    "options": {
+      "raw": {
+        "language": "json"
+      }
+    },
+    "raw_json_formatted": {
+      "override": {
+        "key1": "value3"
+      },
+      "context": {
+        "==": [
+          {
+            "var": "clientId"
+          },
+          "tamatar"
+        ]
+      }
+    }
+  },
+  "url": {
+    "raw": "{{host}}/context/move/{{context_id}}",
+    "host": [
+      "{{host}}"
+    ],
+    "path": [
+      "context",
+      "move",
+      "{{context_id}}"
+    ]
+  }
+}

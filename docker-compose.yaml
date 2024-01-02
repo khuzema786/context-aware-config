@@ -1,0 +1,26 @@
+version: "3.4"
+
+services:
+  postgres:
+    build: ./docker-compose/postgres/
+    container_name: context-aware-config_postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: "docker"
+      POSTGRES_DB: "config"
+    restart: on-failure
+    network_mode: bridge
+
+  localstack:
+    build : ./docker-compose/localstack/
+    container_name: context-aware-config_localstack
+    ports:
+      - "4510-4559:4510-4559"  # external service port range
+      - "4566:4566"            # LocalStack Edge Proxy
+      - "4571:4571"
+    network_mode: bridge
+    environment:
+      LOCALSTACK_SERVICES: s3, sns, sqs, logs, cloudwatch, kms
+      AWS_DEFAULT_REGION: ap-south-1
+      EDGE_PORT: 4566

@@ -1,0 +1,25 @@
+[package]
+name = "external"
+version = "0.3.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# env
+dotenv = { workspace = true }
+# Https server framework
+actix = { workspace = true }
+actix-web = { workspace = true }
+# To serialize and deserialize objects from json
+serde = { workspace = true }
+serde_json = { workspace = true }
+# For logging and debugging
+log = { workspace = true }
+# date and time
+chrono = { workspace = true }
+# ORM
+service-utils = { path = "../service-utils" }
+reqwest = { workspace = true }
+experimentation-platform = { path = "../experimentation-platform"}
+dashboard-auth = { workspace = true }

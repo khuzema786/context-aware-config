@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.h-sidenav {
+  height: calc(100vh - 370px);
+}
+
+.menu li > :not(ul):not(.menu-title):not(details).active {
+    @apply bg-white;
+    @apply text-black;
+    @apply shadow-lg;
+    @apply font-bold;
+}
+
+.context_condition{
+    font-size: 0.9rem;
+}

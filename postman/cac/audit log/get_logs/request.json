@@ -1,0 +1,13 @@
+{
+  "method": "GET",
+  "header": [],
+  "url": {
+    "raw": "{{host}}/audit",
+    "host": [
+      "{{host}}"
+    ],
+    "path": [
+      "audit"
+    ]
+  }
+}
